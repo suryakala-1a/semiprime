@@ -1,0 +1,21 @@
+import math as m
+def isprime(n):
+    flag=0
+    sq=int(m.sqrt(n))
+    for i in range(2,sq+1):
+        if(n%i==0):
+            flag+=1
+    if flag==0:
+        return True
+    return False
+def issemi(a):
+    i=2
+    for i in range(2,a):
+        if(a%i==0 and isprime(i)):
+            if(isprime(a//i)):
+                return True
+    return False
+            
+a=int(input("enter a number:"))
+num=issemi(a)
+print(num)
